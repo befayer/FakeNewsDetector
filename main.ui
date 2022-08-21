@@ -1,0 +1,848 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>871</width>
+    <height>744</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Fake news detector</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(194, 194, 194);</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QTabWidget" name="tabWidget">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>881</width>
+      <height>731</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(217, 217, 217);
+border-color: rgb(0, 0, 0);</string>
+    </property>
+    <property name="currentIndex">
+     <number>0</number>
+    </property>
+    <widget class="QWidget" name="tab_2">
+     <attribute name="title">
+      <string>Классификатор новости</string>
+     </attribute>
+     <widget class="QLabel" name="label">
+      <property name="geometry">
+       <rect>
+        <x>280</x>
+        <y>10</y>
+        <width>361</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Impact</family>
+        <pointsize>20</pointsize>
+        <weight>50</weight>
+        <italic>false</italic>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">
+font: 20pt &quot;Impact&quot;;
+color: rgb(84, 103, 118);</string>
+      </property>
+      <property name="text">
+       <string>КЛАССИФИКАТОР НОВОСТЕЙ</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_title">
+      <property name="geometry">
+       <rect>
+        <x>400</x>
+        <y>90</y>
+        <width>81</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">
+font: 12pt &quot;Impact&quot;;
+color: rgb(84, 103, 118);</string>
+      </property>
+      <property name="text">
+       <string>ЗАГОЛОВОК</string>
+      </property>
+     </widget>
+     <widget class="QTextEdit" name="textTitleNews">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>110</y>
+        <width>821</width>
+        <height>71</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(229, 229, 229);
+border-color: rgb(255, 255, 255);
+font: 75 8pt &quot;Berlin Sans FB Demi&quot;;</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_text">
+      <property name="geometry">
+       <rect>
+        <x>420</x>
+        <y>190</y>
+        <width>41</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">
+font: 12pt &quot;Impact&quot;;
+color: rgb(84, 103, 118);</string>
+      </property>
+      <property name="text">
+       <string>ТЕКСТ</string>
+      </property>
+     </widget>
+     <widget class="QTextEdit" name="textNews">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>220</y>
+        <width>821</width>
+        <height>331</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(229, 229, 229);
+border-color: rgb(255, 255, 255);
+font: 75 8pt &quot;Berlin Sans FB Demi&quot;;</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>560</y>
+        <width>821</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 12pt &quot;Impact&quot;;
+color: rgb(84, 103, 118);</string>
+      </property>
+      <property name="text">
+       <string>КЛАССИФИЦИРОВАТЬ</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_result">
+      <property name="geometry">
+       <rect>
+        <x>320</x>
+        <y>620</y>
+        <width>251</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 75 35pt &quot;Berlin Sans FB Demi&quot;;</string>
+      </property>
+      <property name="text">
+       <string>РЕЗУЛЬТАТ</string>
+      </property>
+      <property name="wordWrap">
+       <bool>true</bool>
+      </property>
+      <property name="margin">
+       <number>0</number>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_13">
+      <property name="geometry">
+       <rect>
+        <x>310</x>
+        <y>680</y>
+        <width>261</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 10pt &quot;Impact&quot;;
+color: rgb(84, 103, 118);</string>
+      </property>
+      <property name="text">
+       <string>© Самарский университет, Калинин А.А. 2021</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_nameUser">
+      <property name="geometry">
+       <rect>
+        <x>750</x>
+        <y>10</y>
+        <width>101</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 12pt &quot;Impact&quot;;
+color: rgb(84, 103, 118);</string>
+      </property>
+      <property name="text">
+       <string>Пользователь</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="changeUserBtn">
+      <property name="geometry">
+       <rect>
+        <x>730</x>
+        <y>70</y>
+        <width>131</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 8pt &quot;Impact&quot;;
+color: rgb(84, 103, 118);</string>
+      </property>
+      <property name="text">
+       <string>Сменить пользователя</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_11">
+      <property name="geometry">
+       <rect>
+        <x>750</x>
+        <y>30</y>
+        <width>101</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 8pt &quot;Impact&quot;;
+color: rgb(84, 103, 118);</string>
+      </property>
+      <property name="text">
+       <string>user</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tab">
+     <attribute name="title">
+      <string>История классификаций</string>
+     </attribute>
+     <widget class="QTableWidget" name="tableWidget">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>871</width>
+        <height>701</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <attribute name="horizontalHeaderDefaultSectionSize">
+       <number>139</number>
+      </attribute>
+      <attribute name="verticalHeaderDefaultSectionSize">
+       <number>30</number>
+      </attribute>
+      <attribute name="verticalHeaderMinimumSectionSize">
+       <number>23</number>
+      </attribute>
+      <column>
+       <property name="text">
+        <string notr="true">Заголовок</string>
+       </property>
+       <property name="font">
+        <font>
+         <family>Impact</family>
+         <pointsize>10</pointsize>
+        </font>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Текст</string>
+       </property>
+       <property name="font">
+        <font>
+         <family>Impact</family>
+         <pointsize>10</pointsize>
+        </font>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Результат</string>
+       </property>
+       <property name="font">
+        <font>
+         <family>Impact</family>
+         <pointsize>10</pointsize>
+        </font>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Дата</string>
+       </property>
+       <property name="font">
+        <font>
+         <family>Impact</family>
+         <pointsize>10</pointsize>
+        </font>
+       </property>
+      </column>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tab_3">
+     <attribute name="title">
+      <string>Исследование</string>
+     </attribute>
+     <widget class="QPushButton" name="pushButton_test">
+      <property name="geometry">
+       <rect>
+        <x>470</x>
+        <y>440</y>
+        <width>321</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Impact</family>
+        <pointsize>12</pointsize>
+        <weight>50</weight>
+        <italic>false</italic>
+        <bold>false</bold>
+        <underline>false</underline>
+        <strikeout>false</strikeout>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 12pt &quot;Impact&quot;;
+color: rgb(84, 103, 118);</string>
+      </property>
+      <property name="text">
+       <string>ИССЛЕДОВАТЬ</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_accuracy">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>300</y>
+        <width>161</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 15pt &quot;Impact&quot;;
+color: rgb(84, 103, 118);</string>
+      </property>
+      <property name="text">
+       <string>Точность: 90.90%</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_predskazano_pravilno">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>340</y>
+        <width>231</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 14pt &quot;Impact&quot;;
+color: rgb(84, 103, 118);</string>
+      </property>
+      <property name="text">
+       <string>Классифицировано верно:</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_pravilno_count_true_result">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>370</y>
+        <width>311</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 12pt &quot;Impact&quot;;
+color: rgb(84, 103, 118);</string>
+      </property>
+      <property name="text">
+       <string>500 образцов, принадлежащих классу TRUE</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_pravilno_count_fake_result">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>390</y>
+        <width>311</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 12pt &quot;Impact&quot;;
+color: rgb(84, 103, 118);</string>
+      </property>
+      <property name="text">
+       <string>500 образцов, принадлежащих классу FAKE</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_neverno_count_true_result">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>450</y>
+        <width>321</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 12pt &quot;Impact&quot;;
+color: rgb(84, 103, 118);</string>
+      </property>
+      <property name="text">
+       <string>50 образцов, принадлежащих классу TRUE</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_predskazano_neverno">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>420</y>
+        <width>251</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 14pt &quot;Impact&quot;;
+color: rgb(84, 103, 118);</string>
+      </property>
+      <property name="text">
+       <string>Классифицировано неверно:</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_neverno_count_fake_result">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>470</y>
+        <width>321</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 12pt &quot;Impact&quot;;
+color: rgb(84, 103, 118);</string>
+      </property>
+      <property name="text">
+       <string>50 образцов, принадлежащих классу TRUE</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_12">
+      <property name="geometry">
+       <rect>
+        <x>330</x>
+        <y>670</y>
+        <width>301</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 10pt &quot;Impact&quot;;
+color: rgb(84, 103, 118);</string>
+      </property>
+      <property name="text">
+       <string>© Самарский университет, Калинин А.А. 2021</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_3">
+      <property name="geometry">
+       <rect>
+        <x>420</x>
+        <y>30</y>
+        <width>431</width>
+        <height>391</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap>graphic.png</pixmap>
+      </property>
+      <property name="scaledContents">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_2">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>90</y>
+        <width>181</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 12pt &quot;Impact&quot;;
+color: rgb(84, 103, 118);</string>
+      </property>
+      <property name="text">
+       <string>Объем тестовой выборки:</string>
+      </property>
+     </widget>
+     <widget class="QDoubleSpinBox" name="doubleSpinBoxSizeTestSet">
+      <property name="geometry">
+       <rect>
+        <x>230</x>
+        <y>90</y>
+        <width>62</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 12pt &quot;Impact&quot;;
+color: rgb(84, 103, 118);</string>
+      </property>
+      <property name="decimals">
+       <number>1</number>
+      </property>
+      <property name="minimum">
+       <double>0.100000000000000</double>
+      </property>
+      <property name="maximum">
+       <double>0.900000000000000</double>
+      </property>
+      <property name="singleStep">
+       <double>0.100000000000000</double>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_4">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>130</y>
+        <width>191</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 12pt &quot;Impact&quot;;
+color: rgb(84, 103, 118);</string>
+      </property>
+      <property name="text">
+       <string>Игнорирование терминов,</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_5">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>150</y>
+        <width>201</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 12pt &quot;Impact&quot;;
+color: rgb(84, 103, 118);</string>
+      </property>
+      <property name="text">
+       <string>встречающихся более чем в:</string>
+      </property>
+     </widget>
+     <widget class="QDoubleSpinBox" name="doubleSpinBoxMaxDF">
+      <property name="geometry">
+       <rect>
+        <x>230</x>
+        <y>150</y>
+        <width>62</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 12pt &quot;Impact&quot;;
+color: rgb(84, 103, 118);</string>
+      </property>
+      <property name="decimals">
+       <number>1</number>
+      </property>
+      <property name="minimum">
+       <double>0.100000000000000</double>
+      </property>
+      <property name="maximum">
+       <double>0.900000000000000</double>
+      </property>
+      <property name="singleStep">
+       <double>0.100000000000000</double>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_6">
+      <property name="geometry">
+       <rect>
+        <x>300</x>
+        <y>150</y>
+        <width>91</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 12pt &quot;Impact&quot;;
+color: rgb(84, 103, 118);</string>
+      </property>
+      <property name="text">
+       <string>документов</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_7">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>190</y>
+        <width>261</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 12pt &quot;Impact&quot;;
+color: rgb(84, 103, 118);</string>
+      </property>
+      <property name="text">
+       <string>Максимальное количество проходов</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_8">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>210</y>
+        <width>171</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 12pt &quot;Impact&quot;;
+color: rgb(84, 103, 118);</string>
+      </property>
+      <property name="text">
+       <string>по обучающим данным</string>
+      </property>
+     </widget>
+     <widget class="QSpinBox" name="spinBox">
+      <property name="geometry">
+       <rect>
+        <x>230</x>
+        <y>210</y>
+        <width>61</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 12pt &quot;Impact&quot;;
+color: rgb(84, 103, 118);</string>
+      </property>
+      <property name="minimum">
+       <number>1</number>
+      </property>
+      <property name="maximum">
+       <number>200</number>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_9">
+      <property name="geometry">
+       <rect>
+        <x>60</x>
+        <y>590</y>
+        <width>771</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 11pt &quot;Impact&quot;;
+color: rgb(0, 115, 255);</string>
+      </property>
+      <property name="text">
+       <string>Система определила, что 30 новостей true, 10 новостей fake. Из них 5 новостей было отнесено не к тому классу.</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_10">
+      <property name="geometry">
+       <rect>
+        <x>50</x>
+        <y>30</y>
+        <width>301</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 14pt &quot;Impact&quot;;
+color: rgb(84, 103, 118);</string>
+      </property>
+      <property name="text">
+       <string>Параметры машинного обучения</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_repusltat">
+      <property name="geometry">
+       <rect>
+        <x>60</x>
+        <y>270</y>
+        <width>91</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 14pt &quot;Impact&quot;;
+color: rgb(84, 103, 118);</string>
+      </property>
+      <property name="text">
+       <string>Результат</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tab_4">
+     <attribute name="title">
+      <string>История исследований</string>
+     </attribute>
+     <widget class="QTableWidget" name="tableWidget_2">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>871</width>
+        <height>701</height>
+       </rect>
+      </property>
+      <property name="baseSize">
+       <size>
+        <width>0</width>
+        <height>0</height>
+       </size>
+      </property>
+      <attribute name="horizontalHeaderCascadingSectionResizes">
+       <bool>false</bool>
+      </attribute>
+      <attribute name="horizontalHeaderDefaultSectionSize">
+       <number>124</number>
+      </attribute>
+      <attribute name="horizontalHeaderMinimumSectionSize">
+       <number>11</number>
+      </attribute>
+      <attribute name="horizontalHeaderShowSortIndicator" stdset="0">
+       <bool>false</bool>
+      </attribute>
+      <attribute name="verticalHeaderVisible">
+       <bool>false</bool>
+      </attribute>
+      <attribute name="verticalHeaderDefaultSectionSize">
+       <number>44</number>
+      </attribute>
+      <attribute name="verticalHeaderHighlightSections">
+       <bool>false</bool>
+      </attribute>
+      <attribute name="verticalHeaderMinimumSectionSize">
+       <number>32</number>
+      </attribute>
+      <column>
+       <property name="text">
+        <string>Дата</string>
+       </property>
+       <property name="font">
+        <font>
+         <family>Impact</family>
+         <pointsize>9</pointsize>
+        </font>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Точность</string>
+       </property>
+       <property name="font">
+        <font>
+         <family>Impact</family>
+         <pointsize>9</pointsize>
+        </font>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>TRUE</string>
+       </property>
+       <property name="font">
+        <font>
+         <family>Impact</family>
+        </font>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>FAKE</string>
+       </property>
+       <property name="font">
+        <font>
+         <family>Impact</family>
+        </font>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Объем тестовой выборки</string>
+       </property>
+       <property name="font">
+        <font>
+         <family>Impact</family>
+        </font>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Объем документов, сдержащих исключающие термины</string>
+       </property>
+       <property name="font">
+        <font>
+         <family>Impact</family>
+        </font>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Количество итераций обучения</string>
+       </property>
+       <property name="font">
+        <font>
+         <family>Impact</family>
+        </font>
+       </property>
+      </column>
+     </widget>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

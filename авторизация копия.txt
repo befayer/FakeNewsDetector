@@ -1,0 +1,97 @@
+class Ui_Login(object):
+
+    def setupUi(self, Form):
+        Form.setObjectName("Form")
+        Form.resize(272, 230)
+        self.auth = QtWidgets.QPushButton(Form)
+        self.auth.setGeometry(QtCore.QRect(20, 130, 241, 23))
+        self.auth.setObjectName("auth")
+        self.pushButton_2 = QtWidgets.QPushButton(Form)
+        self.pushButton_2.setGeometry(QtCore.QRect(20, 190, 241, 23))
+        self.pushButton_2.setObjectName("pushButton_2")
+        self.lineEdit = QtWidgets.QLineEdit(Form)
+        self.lineEdit.setGeometry(QtCore.QRect(20, 70, 241, 21))
+        self.lineEdit.setObjectName("lineEdit")
+        self.lineEdit_2 = QtWidgets.QLineEdit(Form)
+        self.lineEdit_2.setGeometry(QtCore.QRect(20, 100, 241, 20))
+        self.lineEdit_2.setObjectName("lineEdit_2")
+        self.label = QtWidgets.QLabel(Form)
+        self.label.setGeometry(QtCore.QRect(70, 10, 161, 31))
+        font = QtGui.QFont()
+        font.setPointSize(10)
+        self.label.setFont(font)
+        self.label.setObjectName("label")
+        self.label_2 = QtWidgets.QLabel(Form)
+        self.label_2.setGeometry(QtCore.QRect(100, 170, 91, 16))
+        font = QtGui.QFont()
+        font.setPointSize(10)
+        self.label_2.setFont(font)
+        self.label_2.setObjectName("label_2")
+        self.label_3 = QtWidgets.QLabel(Form)
+        self.label_3.setGeometry(QtCore.QRect(100, 40, 81, 21))
+        font = QtGui.QFont()
+        font.setPointSize(10)
+        self.label_3.setFont(font)
+        self.label_3.setObjectName("label_3")
+
+        self.retranslateUi(Form)
+        QtCore.QMetaObject.connectSlotsByName(Form)
+        self.show_main()
+        self.event_registration()
+
+
+    def retranslateUi(self, Form):
+        _translate = QtCore.QCoreApplication.translate
+        Form.setWindowTitle(_translate("Form", "Form"))
+        self.auth.setText(_translate("Form", "Войти"))
+        self.pushButton_2.setText(_translate("Form", "Зарегистрироваться"))
+        self.lineEdit.setPlaceholderText(_translate("Form", "Логин"))
+        self.lineEdit_2.setPlaceholderText(_translate("Form", "Пароль"))
+        self.label.setText(_translate("Form", "Классификатор новостей"))
+        self.label_2.setText(_translate("Form", "Нет аккаунта?"))
+        self.label_3.setText(_translate("Form", "Авторизация"))
+
+    def show_main(self):
+        self.auth.clicked.connect(lambda: self.showww())
+
+    def event_registration(self):
+        self.pushButton_2.clicked.connect(lambda: self.registration())
+
+    def showww(self):
+        login = self.lineEdit.text()
+        password = self.lineEdit_2.text()
+        connection = sqlite3.connect('resourse/history.db')
+        cursor = connection.cursor()
+        cursor.execute("""CREATE TABLE IF NOT EXISTS users ("login" TEXT,"password" TEXT)""")
+
+        sqlCheckUser = f"SELECT * FROM users WHERE login='{login}' AND password='{password}'"
+        cursor.execute(sqlCheckUser)
+        all = cursor.fetchall()
+
+        for i in range(len(all)):
+            temp = all[i]
+            if ((login==temp[0]) and (password==temp[1])):
+                ui = Ui_MainWindow()
+                ui.setupUi(MainWindow, login)
+                MainWindow.show()
+            #else
+
+            #for j in range(len(temp)):
+            #    print(".")
+            #    print(temp[j])
+        #print(cursor.execute(sqlCheckUser).fetchall())
+
+
+    def registration(self):
+        login = self.lineEdit.text()
+        password = self.lineEdit_2.text()
+        print(login)
+        print(password)
+        connection = sqlite3.connect('resourse/history.db')
+        cursor = connection.cursor()
+        cursor.execute("""CREATE TABLE IF NOT EXISTS users ("login" TEXT,"password" TEXT)""")
+        sqlRegistrationUser = f"INSERT INTO users VALUES ('{login}','{password}')"
+        cursor.execute(sqlRegistrationUser)
+        connection.commit()
+        print(f"User with login:'{login}' and password:'{password}' was registered")
+        cursor.close()
